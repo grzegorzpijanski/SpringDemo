@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @Entity
 @Getter
-public class Ball {
+public class Ball extends Product {
 
     @Column
     private BallType type;
