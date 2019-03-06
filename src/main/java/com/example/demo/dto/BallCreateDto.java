@@ -1,7 +1,7 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.PositiveOrZero;
 
 import com.example.demo.enumeration.BallType;
 import lombok.AllArgsConstructor;
@@ -9,16 +9,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ball extends Product {
+public final class BallCreateDto extends ProductDto {
 
-    @Column
     private BallType type;
 
-    @Column
+    @Max(10)
+    @PositiveOrZero
     private int size;
 }

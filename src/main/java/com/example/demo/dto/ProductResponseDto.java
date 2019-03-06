@@ -11,11 +11,13 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public final class ManufacturerResponseDto {
+public class ProductResponseDto {
 
     private UUID id;
 
     private String name;
 
-    private String address;
+    private double price;
+
+    private ManufacturerResponseDto manufacturer;
 }

@@ -1,5 +1,8 @@
 package com.example.demo.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
+
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -11,11 +14,13 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public final class ManufacturerResponseDto {
+public class ProductDto {
 
-    private UUID id;
-
+    @NotBlank
     private String name;
 
-    private String address;
+    @PositiveOrZero
+    private double price;
+
+    private UUID manufacturerId;
 }

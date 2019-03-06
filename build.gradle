@@ -7,6 +7,7 @@ ext {
     javaxInjectVersion = '1'
     mapstructVersion = '1.3.0.Final'
     lombokVersion = '1.18.6'
+    swaggerVersion = '2.9.2'
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -35,6 +36,8 @@ dependencies {
         [group: 'org.springframework.boot', name: 'spring-boot-starter-web'],
         [group: 'javax.inject', name: 'javax.inject', version: javaxInjectVersion],
         [group: 'org.mapstruct', name: 'mapstruct-jdk8', version: mapstructVersion],
+        [group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion],
+        [group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion],
     )
     compileOnly(
         [group: 'org.projectlombok', name: 'lombok', version: lombokVersion],

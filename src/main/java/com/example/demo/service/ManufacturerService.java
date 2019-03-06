@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.UUID;
+
 import com.example.demo.dto.ManufacturerCreateDto;
 import com.example.demo.dto.ManufacturerResponseDto;
 import com.example.demo.exception.NotFoundException;
@@ -23,16 +25,23 @@ public class ManufacturerService {
         this.manufacturerMapper = manufacturerMapper;
     }
 
-    public void add(final ManufacturerCreateDto dto) {
+    public UUID add(final ManufacturerCreateDto dto) {
         final Manufacturer manufacturer = manufacturerMapper.toDomain(dto);
 
         manufacturerRepository.save(manufacturer);
+
+        return manufacturer.getId();
     }
 
-    public ManufacturerResponseDto find(final long manufacturerId) {
+    public ManufacturerResponseDto find(final UUID manufacturerId) {
         final Manufacturer manufacturer = manufacturerRepository.findById(manufacturerId)
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new NotFoundException("Manufacturer not found", manufacturerId));
 
         return manufacturerMapper.toResponseDto(manufacturer);
+    }
+
+    Manufacturer get(final UUID manufacturerId) {
+        return manufacturerRepository.findById(manufacturerId)
+                .orElseThrow(() -> new NotFoundException("Manufacturer not found", manufacturerId));
     }
 }

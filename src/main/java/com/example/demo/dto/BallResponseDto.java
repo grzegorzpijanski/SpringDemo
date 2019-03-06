@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
-import java.util.UUID;
-
+import com.example.demo.enumeration.BallType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,11 +10,9 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public final class ManufacturerResponseDto {
+public final class BallResponseDto extends ProductResponseDto {
 
-    private UUID id;
+    private BallType type;
 
-    private String name;
-
-    private String address;
+    private int size;
 }

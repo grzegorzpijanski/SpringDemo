@@ -1,21 +1,16 @@
 package com.example.demo.dto;
 
-import java.util.UUID;
-
+import com.example.demo.enumeration.BikeType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public final class ManufacturerResponseDto {
+public final class BikeCreateDto extends ProductDto {
 
-    private UUID id;
-
-    private String name;
-
-    private String address;
+    private BikeType type;
 }
