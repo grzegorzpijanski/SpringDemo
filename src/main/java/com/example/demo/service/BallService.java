@@ -31,7 +31,7 @@ public class BallService {
         this.manufacturerService = manufacturerService;
     }
 
-    public UUID add(final BallCreateDto dto) {
+    public UUID create(final BallCreateDto dto) {
         final Manufacturer manufacturer = manufacturerService.get(dto.getManufacturerId());
         final Ball ball = ballMapper.toDomain(dto);
         ball.setManufacturer(manufacturer);

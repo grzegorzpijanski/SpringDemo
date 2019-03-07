@@ -29,10 +29,10 @@ public class BallController {
         this.ballService = ballService;
     }
 
-    @ApiOperation("Allows to add a ball")
+    @ApiOperation("Allows to create a ball")
     @PostMapping
-    public ResponseEntity<UUID> add(@Valid @RequestBody final BallCreateDto dto) {
-        final UUID ballId = ballService.add(dto);
+    public ResponseEntity<UUID> create(@Valid @RequestBody final BallCreateDto dto) {
+        final UUID ballId = ballService.create(dto);
 
         return new ResponseEntity<>(ballId, HttpStatus.OK);
     }

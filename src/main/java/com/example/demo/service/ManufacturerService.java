@@ -25,7 +25,7 @@ public class ManufacturerService {
         this.manufacturerMapper = manufacturerMapper;
     }
 
-    public UUID add(final ManufacturerCreateDto dto) {
+    public UUID create(final ManufacturerCreateDto dto) {
         final Manufacturer manufacturer = manufacturerMapper.toDomain(dto);
 
         manufacturerRepository.save(manufacturer);

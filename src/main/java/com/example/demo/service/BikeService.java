@@ -30,7 +30,7 @@ public class BikeService {
         this.manufacturerService = manufacturerService;
     }
 
-    public UUID add(final BikeCreateDto dto) {
+    public UUID create(final BikeCreateDto dto) {
         final Manufacturer manufacturer = manufacturerService.get(dto.getManufacturerId());
         final Bike bike = bikeMapper.toDomain(dto);
         bike.setManufacturer(manufacturer);

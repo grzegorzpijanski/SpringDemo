@@ -29,10 +29,10 @@ public class BikeController {
         this.bikeService = bikeService;
     }
 
-    @ApiOperation("Allows to add a bike")
+    @ApiOperation("Allows to create a bike")
     @PostMapping
-    public ResponseEntity<UUID> add(@Valid @RequestBody final BikeCreateDto dto) {
-        final UUID id = bikeService.add(dto);
+    public ResponseEntity<UUID> create(@Valid @RequestBody final BikeCreateDto dto) {
+        final UUID id = bikeService.create(dto);
 
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
